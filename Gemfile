@@ -6,6 +6,8 @@ gem "bootsnap", require: false
 gem "jbuilder"
 gem "jsbundling-rails"
 gem "puma", "~> 5.0"
+gem "sassc"
+gem "sassc-rails"
 gem "rails", "~> 7.0.4", ">= 7.0.4.3"
 gem "sprockets-rails"
 gem "sqlite3", "~> 1.4"
