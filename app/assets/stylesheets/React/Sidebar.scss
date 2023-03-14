@@ -1,3 +1,43 @@
 #Sidebar {
   width: 275px;
+  
+  &>* {
+    padding: 10px 15px;
+  }
+}
+
+#SidebarTop {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+#logo-main {
+  width: 40px;
+}
+
+#SideBarTop__LinksContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.SidebarTop__Link {
+  display: flex;
+  gap: 15px;
+  justify-content: flex-start;
+  align-items: center;
+  
+  &, * {
+    user-select: none;
+    cursor: pointer;
+  }
+  
+  img.SidebarLinkIcon {
+    height: 25px;
+  }
+  
+  .SidebarLinkLabel {
+    font-size: 20px;
+  }
 }
