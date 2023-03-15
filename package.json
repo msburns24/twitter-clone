@@ -10,8 +10,8 @@
   },
   "scripts": {
     "build": "node ./config/esbuild.config.js",
-    "build-std": "esbuild ./app/javascript/application.js --public-path=assets --bundle --outdir=./app/assets/builds --loader:.js=jsx --loader:.svg=file",
-    "build-watch": "esbuild ./app/javascript/application.js --public-path=assets --bundle --outdir=./app/assets/builds --loader:.js=jsx --loader:.svg=file --watch",
+    "build-std": "esbuild ./app/javascript/application.js --public-path=assets --bundle --outdir=./app/assets/builds --loader:.js=jsx --loader:.svg=file --loader:.jpg=file --loader:.png=file --loader:.gif=file --minify --sourcemap",
+    "build-watch": "esbuild ./app/javascript/application.js --public-path=assets --bundle --outdir=./app/assets/builds --loader:.js=jsx --loader:.svg=file --loader:.jpg=file --loader:.png=file --loader:.gif=file --minify --sourcemap --watch",
     "build:css": "sass ./app/assets/stylesheets/application.bootstrap.scss ./app/assets/builds/application.css --no-source-map --load-path=node_modules"
   }
 }
