@@ -1,4 +1,63 @@
+@import '../variables';
+
 #Feed {
   height: 100%;
   width: 600px;
+
+  border-left: 1px solid $border-color;
+  border-right: 1px solid $border-color;
+}
+
+#FeedTop {
+  height: 50px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+
+  & > * {
+    flex: 1;
+  }
+
+  #FeedTop__PageTitle {
+    font-size: 20px;
+    font-weight: bold;
+    padding: 16px 12px;
+  }
+
+  #FeedTop__FeedType {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    border-bottom: 1px solid $border-color;
+
+    .FeedTypeContainer {
+      flex: 1;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+
+      // padding: 10px;
+
+      transition: all 0.2s ease-in-out;
+
+      &:hover {
+        background-color: $bkgd-dark-hover;
+      }
+    }
+
+    .FeedTypeText {
+      font-size: 16px;
+      padding: 10px 0;
+      
+      &.FeedTypeActive {
+        font-weight: bold;
+        border-bottom: 3px solid $primary-color;
+      }
+    }
+  }
 }

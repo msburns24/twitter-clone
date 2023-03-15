@@ -1,8 +1,11 @@
 import React from 'react'
+import FeedTop from './FeedTop'
 
 function Feed() {
   return (
-    <div id='Feed'>Feed</div>
+    <div id='Feed'>
+      <FeedTop />
+    </div>
   )
 }
 
