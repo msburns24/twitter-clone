@@ -1,10 +1,10 @@
 import React from 'react'
-import profilePic from '../../../images/profile-pic.jpg'
+import ProfilePicSm from '../../shared/ProfilePicSm'
 
 function SidebarBottom() {
   return (
     <div id='SidebarBottom'>
-      <img src={profilePic} alt='Profile Pic' id='SidebarProfilePic' />
+      <ProfilePicSm />
       <div id='SidebarProfileInfo'>
         <h3 id='SidebarName'>Matt</h3>
         <div id='SidebarUsername'>@msburns24</div>

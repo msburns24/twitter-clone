@@ -1,6 +1,11 @@
 @import '../variables';
 
 #Feed {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: stretch;
+
   height: 100%;
   width: 600px;
 
@@ -9,7 +14,8 @@
 }
 
 #FeedTop {
-  height: 50px;
+  flex: none;
+
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -59,5 +65,93 @@
         border-bottom: 3px solid $primary-color;
       }
     }
+  }
+}
+
+#FeedNewTweet {
+  flex: none;
+  padding: 8px 16px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: stretch;
+  align-items: flex-start;
+  gap: 12px;
+
+  border-bottom: 1px solid $border-color;
+
+  .TweetRight {
+    flex: 1;
+
+    * {
+      box-sizing: border-box;
+    }
+
+    .TweetRight__authorInfo {
+      opacity: 0;
+    }
+
+    .TweetRight__authorInfo__name {
+      font-weight: bold;
+    }
+
+    .TweetRight__authorInfo__handle, .TweetRight__authorInfo__time {
+      font-size: 14px;
+      color: $text-color-light;
+    }
+
+    .TweetContent {
+      min-height: 40px;
+
+      input.TweetContent__input {
+        flex: 1;
+        border: none;
+        outline: none;
+        background-color: transparent;
+        font-size: 20px;
+        padding: 0;
+        margin: 0;
+        color: $text-color-light;
+      }
+    }
+
+    .TweetActions {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    button.TweetActions__right__post {
+      background-color: $primary-color;
+      color: $bkgd-light;
+      border: none;
+      border-radius: 999px;
+      padding: 8px 16px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+
+      &:hover {
+        background-color: darken($primary-color, 10%);
+      }
+    }
+  }
+}
+
+#FeedTweets {
+  flex: 1;
+  overflow-y: auto;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: 8px;
+
+  // hide scrollbar
+  &::-webkit-scrollbar {
+    display: none;
   }
 }
