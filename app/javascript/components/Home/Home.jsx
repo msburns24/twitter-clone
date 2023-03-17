@@ -1,7 +1,7 @@
 import React from 'react'
 import Sidebar from '../shared/Sidebar/Sidebar'
 import Feed from './Feed/Feed'
-import Suggestions from './Suggestions/Suggestions'
+import Suggestions from '../shared/Suggestions/Suggestions'
 
 function Home() {
   return (

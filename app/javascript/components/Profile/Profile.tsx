@@ -1,12 +1,14 @@
 import React from 'react'
 import Sidebar from '../shared/Sidebar/Sidebar'
+import ProfilePane from './ProfilePane'
+import Suggestions from '../shared/Suggestions/Suggestions'
 
 function Profile() {
   return (
     <div id='Profile'>
       <Sidebar />
-      <div className='pane-middle'>Middle Item</div>
-      <div className='pane-right'>Right Item</div>
+      <ProfilePane />
+      <Suggestions />
     </div>
   )
 }
