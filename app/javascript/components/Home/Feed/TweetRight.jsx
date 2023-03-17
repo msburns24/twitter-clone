@@ -1,15 +1,35 @@
 import React from 'react'
+import TweetAuthorInfo from './TweetAuthorInfo'
 
-function TweetRight({ isNewTweet, text }) {
-  let tweetRight = null
+function TweetRight({ isNewTweet, tweetObject }) {
+
+  // Setup ID for TweetRight div
+  const tweetElID = (() => {
+    if (isNewTweet) return 'newTweet'
+    return `tweet-${tweetObject.id}`
+  })()
+
+  // If tweet is new, add the newTweet class to the TweetRight__authorInfo div
+  let tweetAuthorInfoClass = 'TweetRight__authorInfo'
   if (isNewTweet) {
-    tweetRight = (
-      <div className='TweetActions__right'>
-        <button className='TweetActions__right__post'>Tweet</button>
-      </div>
-    )
-  } 
+    tweetAuthorInfoClass += ' newTweet'
+  }
 
+  // If tweet is new, render a blank TweetAuthorInfo div
+  // Otherwise, render the TweetAuthorInfo component
+  let tweetAuthorInfo = null
+  if (isNewTweet) {
+    tweetAuthorInfo = (
+      <div className={tweetAuthorInfoClass}></div>
+    )
+  } else {
+    tweetAuthorInfo = (
+      <TweetAuthorInfo tweetObject={tweetObject} />
+    )
+  }      
+
+  // If tweet is new, render the input field
+  // Otherwise, render the tweet text
   let tweetContent = null
   if (isNewTweet) {
     tweetContent = (
@@ -20,29 +40,39 @@ function TweetRight({ isNewTweet, text }) {
   } else {
     tweetContent = (
       <div className='TweetContent'>
-        <span className='TweetContent__text'>{text}</span>
+        <span className='TweetContent__text'>{tweetObject.text}</span>
       </div>
     )
   }
 
-  let tweetAuthorInfoClass = 'TweetRight__authorInfo'
+  // ##############################################################
+  const hoursAgo = (() => {
+    if (isNewTweet) return null
+    return Math.floor((new Date() - tweetObject.tweetTime) / 1000 / 60 / 60)
+  })()
+  // ##############################################################
+
+  // If tweet is new, render the tweet button
+  let tweetButtonContainer = null
   if (isNewTweet) {
-    tweetAuthorInfoClass += ' newTweet'
-  }
+    tweetButtonContainer = (
+      <div className='TweetActions__right'>
+        <button className='TweetActions__right__post'>Tweet</button>
+      </div>
+    )
+  } 
 
   return (
-    <div className='TweetRight'>
-      <div className={tweetAuthorInfoClass}>
-        <span className='TweetRight__authorInfo__name'>Matt Burns</span>
-        <span className='TweetRight__authorInfo__handle'> | @msburns24</span>
-        <span className='TweetRight__authorInfo__time'> · 1h</span>
-      </div>
+    <div className='TweetRight' id={tweetElID}>
+      {tweetAuthorInfo}
+
       <div className='TweetContent'>
         {tweetContent}
       </div>
+
       <div className='TweetActions'>
         <div className='TweetActions__left'>[Placeholder for media]</div>
-        {tweetRight}
+        {tweetButtonContainer}
       </div>
     </div>
   )

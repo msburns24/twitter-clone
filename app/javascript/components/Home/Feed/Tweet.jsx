@@ -2,11 +2,11 @@ import React from 'react'
 import ProfilePicSm from '../../shared/ProfilePicSm'
 import TweetRight from './TweetRight'
 
-function Tweet(props) {
+function Tweet({ tweetObject }) {
   return (
     <div className='Tweet'>
       <ProfilePicSm />
-      <TweetRight text={props.text} />
+      <TweetRight tweetObject={tweetObject} />
     </div>
   )
 }
