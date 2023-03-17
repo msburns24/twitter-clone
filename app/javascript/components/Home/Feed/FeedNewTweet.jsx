@@ -4,9 +4,9 @@ import TweetRight from './TweetRight'
 
 function FeedNewTweet() {
   return (
-    <div id='FeedNewTweet'>
+    <div id='FeedNewTweet' className='Tweet'>
       <ProfilePicSm />
-      <TweetRight />
+      <TweetRight isNewTweet={true} />
     </div>
   )
 }

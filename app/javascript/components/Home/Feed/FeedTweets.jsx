@@ -3,18 +3,15 @@ import FeedNewTweet from './FeedNewTweet'
 import Tweet from './Tweet'
 
 function FeedTweets() {
-  [tweetTestText, setTweetTestText] = useState('')
-  
-  fetch('https://baconipsum.com/api/?type=all-meat&paras=1&start-with-lorem=1')
-    .then(response => response.json())
-    .then(data => {
-      setTweetTestText( data[0] )
-    })
-    .catch(error => console.log(error))
+  const tweetTestText = `
+  Bacon ipsum dolor amet short loin pork belly chislic kevin beef ribs ham cupim shankle jerky capicola filet mignon landjaeger cow drumstick. Biltong burgdoggen strip steak sausage kielbasa jerky turkey pancetta porchetta alcatra filet mignon. 
+  ` 
 
   return (
     <div id='FeedTweets'>
       <FeedNewTweet />
+      <Tweet text={tweetTestText} />
+      <Tweet text={tweetTestText} />
       <Tweet text={tweetTestText} />
     </div>
   )
