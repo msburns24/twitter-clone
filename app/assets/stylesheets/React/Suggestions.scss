@@ -1,4 +1,49 @@
+@import '../variables';
+
 #Suggestions {
   width: 350px;
   border: 1px solid red;
+  padding: 5px 10px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  #Suggestions__SearchBar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    background-color: $bkgd-medium;
+    border-radius: 100px;
+    padding: 10px 20px;
+
+    .Suggestions__SearchBar__icon {
+      height: 20px;
+    }
+
+    .Suggestions__SearchBar__input {
+      flex: 1;
+      background-color: $bkgd-medium;
+      border: none;
+      outline: none;
+      color: $text-color-light;
+      font-size: 16px;
+    }
+  }
+
+  #SuggestionsTrendList {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    background-color: $bkgd-medium;
+
+    .TrendListHeader {
+      font-size: 20px;
+      font-weight: 600;
+      color: $text-color-light;
+    }
+  }
 }
