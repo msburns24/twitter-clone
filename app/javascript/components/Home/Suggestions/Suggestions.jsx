@@ -7,7 +7,7 @@ import SuggestionsFooter from './SuggestionsFooter'
 
 function Suggestions() {
   return (
-    <div id='Suggestions'>
+    <div id='Suggestions' className='pane-right'>
       <Suggestions__SearchBar />
 
       <SuggestionsCard>

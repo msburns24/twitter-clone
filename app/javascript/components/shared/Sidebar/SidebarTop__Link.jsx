@@ -1,13 +1,16 @@
 import React from 'react'
+import { Link } from "react-router-dom"
 
 function SidebarTop__Link({ linkInfoObj }) {
+  const linkAddress = `/${linkInfoObj.label.toLowerCase()}`
+
   return (
-    <div class='SidebarTop__Link'>
+    <Link to={linkAddress} class='SidebarTop__Link'>
       <img src={linkInfoObj.icon} className='SidebarLinkIcon' />
       <div className='SidebarLinkLabel'>
         {linkInfoObj.label}
       </div>
-    </div>
+    </Link>
   )
 }
 

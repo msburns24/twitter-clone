@@ -4,7 +4,7 @@ import SidebarBottom from './SidebarBottom'
 
 function Sidebar() {
   return (
-    <div id='Sidebar'>
+    <div id='Sidebar' className='pane-left' >
       <SidebarTop />
       <SidebarBottom />
     </div>

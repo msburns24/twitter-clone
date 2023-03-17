@@ -4,7 +4,7 @@ import FeedTweets from './FeedTweets'
 
 function Feed() {
   return (
-    <div id='Feed'>
+    <div id='Feed' className='pane-middle'>
       <FeedTop />
       <FeedTweets />
     </div>

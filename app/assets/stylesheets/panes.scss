@@ -1,0 +1,19 @@
+@import "variables";
+
+.pane-left {
+  width: 250px;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.pane-middle {
+  width: 600px;
+  height: 100%;
+  box-sizing: border-box;
+  border-left: 1px solid $border-color;
+  border-right: 1px solid $border-color;
+}
+
+.pane-right {
+  width: 350px;
+}
