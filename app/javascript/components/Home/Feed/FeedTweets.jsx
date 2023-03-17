@@ -6,7 +6,7 @@ function FeedTweets() {
   const tweetTestText = `
   Bacon ipsum dolor amet short loin pork belly chislic kevin beef ribs ham cupim shankle jerky capicola filet mignon landjaeger cow drumstick. Biltong burgdoggen strip steak sausage kielbasa jerky turkey pancetta porchetta alcatra filet mignon. 
   `
-  const tweetObject =  {
+  const testTweetObject =  {
     id: 1,
     text: tweetTestText,
     user: {
@@ -17,14 +17,18 @@ function FeedTweets() {
     tweetTime: new Date(2023, 2, 17, 7, 0, 0)
   }
 
-  const [tweets, setTweets] = useState([tweetObject])
+  const [tweets, setTweets] = useState([testTweetObject])
+
+  const addTweet = (newTweet) => {
+    setTweets([newTweet, ...tweets])
+  }
 
   return (
     <div id='FeedTweets'>
-      <FeedNewTweet />
-      <Tweet tweetObject={tweets[0]} text={tweetTestText} />
-      <Tweet tweetObject={tweets[0]} text={tweetTestText} />
-      <Tweet tweetObject={tweets[0]} text={tweetTestText} />
+      <FeedNewTweet addTweet={addTweet} />
+      {tweets.map((tweetObject) => {
+        return <Tweet tweetObject={tweetObject} />
+      })}
     </div>
   )
 }
