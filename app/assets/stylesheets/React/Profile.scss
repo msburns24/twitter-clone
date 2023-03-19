@@ -171,3 +171,38 @@
   }
   
 }
+
+.ProfileTabs {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-bottom: 1px solid $border-color;
+
+  & > * {
+    flex: 1;
+  }
+
+  .ProfileTabs__tab {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      background-color: $bkgd-dark-hover;
+    }
+  }
+
+  h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: $text-color-light;
+    margin: 0;
+    padding: 16px 0;
+
+    &.Active {
+      border-bottom: 3px solid $primary-color;
+    }
+  }
+}
