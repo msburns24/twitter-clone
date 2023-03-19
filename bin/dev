@@ -1,9 +1,8 @@
-# if ! gem list foreman -i --silent; then
-#   echo "Installing foreman..."
-#   gem install foreman
-# fi
+#!/usr/bin/env sh
 
-# exec foreman start -f Procfile.dev "$@"
+if ! gem list foreman -i --silent; then
+  echo "Installing foreman..."
+  gem install foreman
+fi
 
-system('yarn build --watch')
-system('rails s -p 3000')
+exec foreman start -f Procfile.dev "$@"
