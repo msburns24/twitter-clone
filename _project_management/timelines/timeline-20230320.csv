@@ -1,0 +1,35 @@
+Sprint,Action,Sub-Action,Estimated Hours,Category,Due Date,Status
+Sprint 1,Frontend Setup,Install Node.js and React,0.5,Frontend,3/13/2023,Complete
+Sprint 1,Frontend Setup,Setup React project with ESBuild,1.5,Frontend,3/14/2023,Complete
+Sprint 1,Frontend UI,Create basic UI layout,4,Frontend,3/15/2023,Complete
+Sprint 1,Frontend UI,Implement Tweet feed with new tweet form,2,Frontend,3/16/2023,Complete
+Sprint 1,Frontend UI,Implement Trend/Suggested User section,1.5,Frontend,3/18/2023,Complete
+Sprint 1,Frontend UI,Implement User Profile page,3,Frontend,3/20/2023,Complete
+Sprint 1,Backend Setup,Install Ruby and Rails,0.5,Backend,3/13/2023,Complete
+Sprint 1,Backend Setup,Setup Rails project with ESBuild,0.5,Backend,3/14/2023,Complete
+Sprint 1,User Authentication,Setup Devise,0.5,Backend,3/16/2023,Complete
+Sprint 2,Frontend UI,Implement Notifications section,2,Frontend,3/21/2023,Not Started
+Sprint 2,Frontend UI,Implement Messages section,3,Frontend,3/23/2023,Not Started
+Sprint 2,Tweet UI,Create tweet UI,4,Frontend,3/20/2023,Future
+Sprint 2,Tweet Management,Implement tweet CRUD functionality,1,Backend,3/22/2023,Not Started
+Sprint 2,User Authentication,Finalize User model,1,Backend,3/22/2023,Not Started
+Sprint 2,Tweet Management,Create tweet model,0.5,Backend,3/23/2023,Not Started
+Sprint 2,User Authentication,Implement Sign in/up UI,4,Frontend,3/23/2023,Not Started
+Sprint 2,User Authentication,Integrate user profile with backend,2,Full Stack,3/24/2023,Not Started
+Sprint 2,Tweet Management,Integrate New Tweet UI with Backend,4,Frontend,3/25/2023,Not Started
+Sprint 3,Follow Management,Create follow model,2,Backend,TBD,Future
+Sprint 3,Follow Management,Implement follow/unfollow functionality,6,Backend,TBD,Future
+Sprint 3,Follow UI,Implement follow/unfollow UI,4,Frontend,TBD,Future
+Sprint 3,Tweet Management,Create tweet controller actions,2,Backend,TBD,Future
+Sprint 3,Follow Management,Create follow controller actions,2,Backend,TBD,Future
+Sprint 4,Real-Time Updates,Setup ActionCable,2,Backend,TBD,Future
+Sprint 4,Real-Time Updates,Implement real-time tweet updates backend,4,Backend,TBD,Future
+Sprint 4,Real-Time Updates,Implement real-time tweet updates frontend,4,Frontend,TBD,Future
+Sprint 4,Hashtag Search,Create hashtag model,2,Backend,TBD,Future
+Sprint 4,Hashtag Search,Implement hashtag search functionality,6,New Feature,TBD,Future
+Sprint 4,Hashtag Search UI,Create hashtag search UI,4,Frontend,TBD,Future
+Sprint 5,Tweet Likes,Create like model,2,New Feature,TBD,Future
+Sprint 5,Tweet Likes,Implement tweet liking functionality,6,New Feature,TBD,Future
+Sprint 5,Code Refactoring,Refactor code for readability and maintainability,8,N/A,TBD,Future
+Sprint 6,Testing and Bug Fixing,Write and execute test cases,12,N/A,TBD,Future
+Sprint 6,Testing and Bug Fixing,Fix any issues found during testing,12,N/A,TBD,Future

@@ -1,0 +1,10 @@
+Sprint,Action,Sub-Action,Estimated Hours,Category,Due Date,Status
+Sprint 2,Frontend UI,Implement Notifications section,2,Frontend,3/21/2023,Not Started
+Sprint 2,Frontend UI,Implement Messages section,3,Frontend,3/23/2023,Not Started
+Sprint 2,Tweet UI,Create tweet UI,4,Frontend,3/20/2023,Future
+Sprint 2,Tweet Management,Implement tweet CRUD functionality,1,Backend,3/22/2023,Not Started
+Sprint 2,User Authentication,Finalize User model,1,Backend,3/22/2023,Not Started
+Sprint 2,Tweet Management,Create tweet model,0.5,Backend,3/23/2023,Not Started
+Sprint 2,User Authentication,Implement Sign in/up UI,4,Frontend,3/23/2023,Not Started
+Sprint 2,User Authentication,Integrate user profile with backend,2,Full Stack,3/24/2023,Not Started
+Sprint 2,Tweet Management,Integrate New Tweet UI with Backend,4,Frontend,3/25/2023,Not Started
