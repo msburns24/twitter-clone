@@ -15,6 +15,13 @@ a {
   color: inherit;
 }
 
+#root {
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+
 #root > * {
   height: 100%;
   background-color: black;
@@ -29,3 +36,13 @@ a {
   width: 20px;
   height: 20px;
 }
+
+.icon-20 { width: 20px; height: 20px; }
+.icon-30 { width: 30px; height: 30px; }
+.icon-40 { width: 40px; height: 40px; }
+.icon-50 { width: 50px; height: 50px; }
+.icon-60 { width: 60px; height: 60px; }
+.icon-70 { width: 70px; height: 70px; }
+.icon-80 { width: 80px; height: 80px; }
+.icon-90 { width: 90px; height: 90px; }
+.icon-100 { width: 100px; height: 100px; }

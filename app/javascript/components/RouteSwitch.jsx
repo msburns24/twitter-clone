@@ -2,6 +2,7 @@ import React from "react"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Home from './Home/Home'
 import Profile from './Profile/Profile'
+import Login from './Login/Login'
 
 function RouteSwitch() {
   return (
@@ -13,6 +14,7 @@ function RouteSwitch() {
         <Route path='/notifications' element={<h1>Notifications</h1>} />
         <Route path='/messages' element={<h1>Messages</h1>} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </BrowserRouter>
   )
