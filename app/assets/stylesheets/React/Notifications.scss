@@ -1,0 +1,40 @@
+@import "../variables";
+
+#NotificationsPane {
+  .pageTitle {
+    padding: 10px 20px;
+    margin: 0;
+    font-size: 1.4em;
+  }
+
+  #NotificationsList {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    border-top: 1px solid $border-color;
+  }
+
+  .Notification {
+    padding: 10px 20px;
+    border-bottom: 1px solid $border-color;
+
+    // .Notification__content {
+    //   display: flex;
+    //   align-items: center;
+    // }
+
+    // .Notification__avatar {
+    //   margin-right: 10px;
+    // }
+
+    // .Notification__message {
+    //   flex: 1;
+    //   font-size: 0.9em;
+    // }
+
+    // .Notification__time {
+    //   font-size: 0.8em;
+    //   color: $text-color-light;
+    // }  
+  }
+}
