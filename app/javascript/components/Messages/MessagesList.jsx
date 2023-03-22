@@ -3,25 +3,8 @@ import gear from "../../images/gear.svg"
 import mailNew from '../../images/mail-new.svg'
 import MessagePreview from './MessagePreview'
 
-function MessagesList() {
-  const dummyMsgSampleObj = {
-    id: 1,
-    senderName: 'John Doe',
-    senderHandle: '@johndoe',
-    preview: 'Hello, how are you?',
-    date: "Mar 22"
-  }
-
-  let dummyMsgList = []
-  for (let i = 0; i < 20; i++) {
-    dummyMsgList.push({
-      id: i,
-      senderName: dummyMsgSampleObj.senderName,
-      senderHandle: dummyMsgSampleObj.senderHandle,
-      preview: dummyMsgSampleObj.preview,
-      date: dummyMsgSampleObj.date
-    })
-  }
+function MessagesList({ messageListArray }) {
+  
 
   return (
     <ul id='MessagesList'>
@@ -33,9 +16,12 @@ function MessagesList() {
         </div>
       </div>
 
-      {dummyMsgList.map((messageObject) => {
-        return <MessagePreview key={messageObject.id} messageObject={messageObject} />
-      })}
+      {/* Show list of messages */}
+      <div className="MessageList__list">
+        {messageListArray.map((messageObject) => {
+          return <MessagePreview key={messageObject.id} messageObject={messageObject} />
+        })}
+      </div>
     </ul>
   )
 }
