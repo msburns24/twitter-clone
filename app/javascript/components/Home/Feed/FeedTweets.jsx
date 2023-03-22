@@ -7,29 +7,45 @@ function FeedTweets() {
   Bacon ipsum dolor amet short loin pork belly chislic kevin beef ribs ham cupim shankle jerky capicola filet mignon landjaeger cow drumstick. Biltong burgdoggen strip steak sausage kielbasa jerky turkey pancetta porchetta alcatra filet mignon. 
   `
 
-  // Fetch tweets from API at /api/v1/tweets
+  // // Fetch tweets from API at /api/v1/tweets
+  // [tweetsArray, setTweetsArray] = useState([])
+  // useEffect(() => {
+  //   fetch('/api/v1/tweets')
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       setTweetsArray(data)
+  //     })
+  // }, [])
+
+  // const testTweetObject =  {
+  //   id: 1,
+  //   content: tweetTestText,
+  //   user: {
+  //     id: 1,
+  //     name: 'Matt Burns',
+  //     handle: 'msburns24'
+  //   },
+  //   tweetTime: new Date(2023, 2, 17, 7, 0, 0)
+  // }
+
+  // const [tweets, setTweets] = useState([testTweetObject])
+
+  const [users, setUsers] = useState([])
+  fetch('/api/v1/users')
+    .then((response) => response.json())
+    .then((data) => {
+      setUsers(data)
+    })
+
+  const [tweets, setTweets] = useState([])
   fetch('/api/v1/tweets')
     .then((response) => response.json())
-    .then((data) => testMethod(data[0]))
-
-
-  function testMethod(myInput) {
-    console.log("The date from Rails API:", myInput.created_at)
-    console.log("Parsed date:", new Date(myInput.created_at))
-  }
-
-  const testTweetObject =  {
-    id: 1,
-    text: tweetTestText,
-    user: {
-      id: 1,
-      name: 'Matt Burns',
-      handle: 'msburns24'
-    },
-    tweetTime: new Date(2023, 2, 17, 7, 0, 0)
-  }
-
-  const [tweets, setTweets] = useState([testTweetObject])
+    .then((data) => {
+      setTweets(data)
+    })
+    .then(
+      console.log(tweets)
+    )
 
   const addTweet = (newTweet) => {
     setTweets([newTweet, ...tweets])
@@ -39,7 +55,7 @@ function FeedTweets() {
     <div id='FeedTweets'>
       <FeedNewTweet addTweet={addTweet} />
       {tweets.map((tweetObject) => {
-        return <Tweet tweetObject={tweetObject} />
+        return <Tweet tweetObject={tweetObject} users={users} />
       })}
     </div>
   )
