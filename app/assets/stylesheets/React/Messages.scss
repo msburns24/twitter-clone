@@ -42,23 +42,48 @@
 
   .Message {
     padding: 10px;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid $border-color;
     &:last-child {
       border-bottom: none;
     }
-    .Message__content {
+
+    .Message__header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0 0 0 0;
+      padding: 0 0 0 0;
+      gap: 5px;
+
+      .Message__senderName {
+        margin: 0 0 0 0;
+        padding: 0 0 0 0;
+        font-size: 16px;
+        color: white;
+      }
+
+      .Message__senderHandle, .Message__date {
+        margin: 0 0 0 0;
+        padding: 0 0 0 0;
+        font-size: 12px;
+        color: #999;
+      }
+    }
+
+    .Message__preview {
       margin: 0 0 0 0;
       padding: 0 0 0 0;
       font-size: 14px;
-      line-height: 1.42857143;
-      color: #333;
-    }
-    .Message__author {
-      margin: 0 0 0 0;
-      padding: 0 0 0 0;
-      font-size: 12px;
-      line-height: 1.42857143;
       color: #999;
     }
   }
+}
+
+#MessageViewPane {
+  width: 600px;
+  height: 100%;
+  padding: 0 0 0 0;
+  margin: 0 0 0 0;
+  list-style: none;
+  border: 1px solid $border-color;
 }

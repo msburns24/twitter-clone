@@ -1,14 +1,14 @@
 import React from 'react'
 import Sidebar from '../shared/Sidebar/Sidebar'
 import MessagesList from './MessagesList'
-import MessageView from './MessageView'
+import MessageViewPane from './MessageViewPane'
 
 function Messages() {
   return (
     <div id='Messages'>
       <Sidebar />
       <MessagesList />
-      <MessageView />
+      <MessageViewPane />
     </div>
   )
 }
