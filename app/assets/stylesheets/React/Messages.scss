@@ -1,0 +1,64 @@
+@import "../variables";
+
+#MessagesList {
+  height: 100%;
+  width: 390px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 0 0 0 0;
+  margin: 0 0 0 0;
+  list-style: none;
+  border: 1px solid $border-color;
+
+  .MessageList__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+
+    .MessageList__pagetitle {
+      margin: 0;
+      font-size: 20px;
+      color: white;
+    }
+
+    .MessageList__actions {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      margin: 0 0 0 0;
+      padding: 0 0 0 0;
+      gap: 15px;
+
+      img {
+        transition: all 0.2s ease-in-out;
+        &:hover {
+          cursor: pointer;
+          filter: invert(0.4);
+        }
+      }
+    }
+  }
+
+  .Message {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    &:last-child {
+      border-bottom: none;
+    }
+    .Message__content {
+      margin: 0 0 0 0;
+      padding: 0 0 0 0;
+      font-size: 14px;
+      line-height: 1.42857143;
+      color: #333;
+    }
+    .Message__author {
+      margin: 0 0 0 0;
+      padding: 0 0 0 0;
+      font-size: 12px;
+      line-height: 1.42857143;
+      color: #999;
+    }
+  }
+}
