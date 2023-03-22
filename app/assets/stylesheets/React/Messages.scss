@@ -40,16 +40,43 @@
     }
   }
 
-  .Message {
-    padding: 10px;
+  .MessagePreview {
+    padding: 15px;
     border-bottom: 1px solid $border-color;
+    display: flex;
+    gap: 15px;
+    justify-content: space-between;
+    align-items: center;
+
+    transition: all 0.2s ease-in-out;
+    &:hover {
+      cursor: pointer;
+      background-color: $bkgd-dark-hover;
+    }
+
     &:last-child {
       border-bottom: none;
     }
 
+    .MessagePreview__left {
+      flex: none;
+      border-radius: 50%;
+      background-color: white;
+    }
+
+    .MessagePreview__right {
+      flex: 1;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: stretch;
+      gap: 5px;
+    }
+
     .Message__header {
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-start;
       align-items: center;
       margin: 0 0 0 0;
       padding: 0 0 0 0;
@@ -60,12 +87,13 @@
         padding: 0 0 0 0;
         font-size: 16px;
         color: white;
+        font-weight: bold;
       }
 
       .Message__senderHandle, .Message__date {
         margin: 0 0 0 0;
         padding: 0 0 0 0;
-        font-size: 12px;
+        font-size: 16px;
         color: #999;
       }
     }
