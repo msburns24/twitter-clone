@@ -10,12 +10,16 @@ class Api::V1::TweetsController < ApplicationController
   end
 
   def create
-    @tweet = Tweet.new(tweet_params)
-    if @tweet.save
-      render json: @tweet
-    else
-      render json: {error: 'Error creating tweet'}
-    end
+    puts "======================================================================"
+    puts params
+    puts "======================================================================"
+
+    # @tweet = Tweet.new(tweet_params)
+    # if @tweet.save
+    #   render json: @tweet
+    # else
+    #   render json: {error: 'Error creating tweet'}
+    # end
   end
 
   def destroy

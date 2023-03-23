@@ -1,11 +1,33 @@
 import React, { useState } from 'react'
 import ProfilePicSm from '../../shared/ProfilePicSm'
 
-function FeedNewTweet({ addTweet }) {
-
+function FeedNewTweet() {
   const [tweetText, setTweetText] = useState('')
 
+  function testPostRqst(tweetText) {
+    const csrf = document.querySelector('[name=csrf-token]').content
+    fetch('/api/v1/tweets/', {
+        method: 'POST',
+        headers: {
+          'X-CSRF-Token': csrf,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ "tweet_text": tweetText }),
+      })
+        .then(response => response.json())
+        .then(response => console.log(JSON.stringify(response)))
+  }
+
   const handleTweetText = (e) => {
+    // Only allow 280 characters
+    if (e.target.value.length > 280) {
+      return
+    }
+
+    // Resize input to fit text
+    e.target.style.height = 'inherit'
+    e.target.style.height = `${e.target.scrollHeight}px`
+
     setTweetText(e.target.value)
   }
 
@@ -14,18 +36,8 @@ function FeedNewTweet({ addTweet }) {
     if (tweetText === '') {
       return
     }
-
-    const newTweet = {
-      id: 2,
-      text: tweetText,
-      user: {
-        id: 1,
-        name: 'Matt Burns',
-        handle: 'msburns24'
-      },
-      tweetTime: new Date()
-    }
-    addTweet(newTweet)
+    // addTweet(newTweet)
+    testPostRqst(tweetText)
     setTweetText('')
   }
 
@@ -35,7 +47,7 @@ function FeedNewTweet({ addTweet }) {
       
       <div className='TweetRight' id='newTweetRight'>
         <div className='TweetContent'>
-          <input className='TweetContent__input' type='text' placeholder="What's happening?" value={tweetText} onChange={handleTweetText} />
+          <textarea className='TweetContent__input' type='text' placeholder="What's happening?" value={tweetText} onChange={handleTweetText} />
         </div>
 
         <div className='TweetActions'>
