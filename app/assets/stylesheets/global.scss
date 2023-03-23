@@ -1,3 +1,5 @@
+@import 'variables';
+
 * {
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
@@ -45,3 +47,12 @@ a {
 .icon-80 { width: 80px; height: 80px; }
 .icon-90 { width: 90px; height: 90px; }
 .icon-100 { width: 100px; height: 100px; }
+
+.link {
+  cursor: pointer;
+  color: $primary-color;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

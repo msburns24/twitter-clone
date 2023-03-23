@@ -1,3 +1,5 @@
+@import "../variables";
+
 .login-container {
   display: flex;
   flex-direction: column !important;
@@ -10,8 +12,13 @@
     grid-template-columns: 1fr 1fr;
 
     background-color: #aaa;
-    box-shadow: 0 0 30px 0 rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 20px 0 rgba(255, 255, 255, 0.3);
     border-radius: 10px;
+
+    & > * {
+      min-width: 350px;
+      min-height: 400px;
+    }
 
     .login-left {
       display: flex;
@@ -25,6 +32,17 @@
 
     .login-right {
       padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: stretch;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin: 0 0 30px 0;
+      color: white;
+      font-weight: normal;
     }
 
     form {
@@ -36,7 +54,7 @@
 
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 20px;
       
     }
 
@@ -46,6 +64,8 @@
       gap: 10px;
 
       label {
+        flex: none;
+
         width: 30px;
         height: 30px;
         padding: 0;
@@ -55,10 +75,45 @@
       }
 
       input {
+        flex: 1;
+
         padding: 10px;
         border: none;
         border-radius: 5px;
         outline: none;
+      }
+    }
+
+    .form-actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .remember-me {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        font-size: 18px;
+
+        input {
+          width: 20px;
+          height: 20px;
+        }
+      }
+      
+      button {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 100px;
+        outline: none;
+        cursor: pointer;
+        font-size: 16px;
+        transition: all 0.3s ease;
+
+        &:hover {
+          background-color: $primary-color;
+          color: white;
+        }
       }
     }
   }
