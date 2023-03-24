@@ -6,6 +6,7 @@ gem "bootsnap", require: false
 gem 'devise'
 gem "jbuilder"
 gem "jsbundling-rails"
+gem "jsonapi-serializer"
 gem "puma", "~> 5.0"
 gem "sassc"
 gem "sassc-rails"

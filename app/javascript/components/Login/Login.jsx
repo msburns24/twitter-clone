@@ -1,9 +1,26 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import emailIcon from '../../images/email.svg'
 import passwordIcon from '../../images/lock.svg'
 import logoWhiteIcon from '../../images/logo-white.svg'
 
 function Login() {
+
+  function handleLoginFormSubmission() {
+    const csrf = document.querySelector('[name=csrf-token]').content
+    const email = document.querySelector('#email').value
+    const password = document.querySelector('#password').value
+    fetch('/users/sign_in', {
+        method: 'POST',
+        headers: {
+          'X-CSRF-Token': csrf,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ "email": email, "password": password }),
+      })
+        .then(response => response.json())
+        .then(response => console.log(JSON.stringify(response)))
+  }
+
   return (
     <div className='login-container'>
       <div id='Login'>
@@ -15,7 +32,7 @@ function Login() {
           <div className="container">
             <h1>Login</h1>
 
-            <form action='/login' method='post'>
+            <form onSubmit={handleLoginFormSubmission}>
               <div className='form-group'>
                 <label htmlFor='email'>
                   <img src={emailIcon} alt='email' className='icon-40' />
