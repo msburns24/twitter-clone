@@ -5,17 +5,18 @@ import logoWhiteIcon from '../../images/logo-white.svg'
 
 function Login() {
 
-  function handleLoginFormSubmission() {
+  function handleLoginFormSubmission(e) {
+    e.preventDefault()
     const csrf = document.querySelector('[name=csrf-token]').content
     const email = document.querySelector('#email').value
     const password = document.querySelector('#password').value
-    fetch('/users/sign_in', {
+    fetch('/api/v1/login', {
         method: 'POST',
         headers: {
           'X-CSRF-Token': csrf,
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ "email": email, "password": password }),
+        body: JSON.stringify({ user: {"email": email, "password": password} }),
       })
         .then(response => response.json())
         .then(response => console.log(JSON.stringify(response)))

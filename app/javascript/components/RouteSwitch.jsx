@@ -2,7 +2,6 @@ import React from "react"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Home from './Home/Home'
 import Profile from './Profile/Profile'
-import Login from './Login/Login'
 import Notifications from './Notifications/Notifications'
 import Messages from './Messages/Messages'
 
@@ -16,7 +15,6 @@ function RouteSwitch() {
         <Route path='/notifications' element={<Notifications />} />
         <Route path='/messages' element={<Messages />} />
         <Route path="/profile" element={<Profile />} />
-        <Route path="/login" element={<Login />} />
       </Routes>
     </BrowserRouter>
   )

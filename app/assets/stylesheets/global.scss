@@ -7,7 +7,7 @@
   box-sizing: border-box;
  }
 
- body, html, #root, #App, #App > div {
+ body, html, #root, #App, #App > div, .devise {
   height: 100%;
   width: 100%;
  }
@@ -17,14 +17,14 @@ a {
   color: inherit;
 }
 
-#root {
+#root, .devise {
   background-color: black;
   color: white;
   display: flex;
   justify-content: center;
 }
 
-#root > * {
+#root > *, .devise > * {
   height: 100%;
   background-color: black;
   color: white;
