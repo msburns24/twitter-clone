@@ -1,29 +1,52 @@
-<h2>Sign up</h2>
+<div class='devise'>
+  <div class='login-container'>
+    <div id='Login'>
+      <div class="login-left">
+        <%= image_tag "/icons/logos/logo-white.svg", alt: "logo", class: 'icon-80' %>
+      </div>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+      <div class="login-right">
+        <div class="container">
+          <h1>Sign Up</h1>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+          <%= render "devise/shared/error_messages", resource: resource %>
+
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name), data: {turbo: false}) do |f| %>
+            <div class='form-group'>
+              <%= f.label :email, image_tag("/icons/mail.svg", alt: "email", class: "icon-30") %>
+              <%= f.email_field :email, 
+                  autofocus: true, 
+                  autocomplete: "email", 
+                  class: "form-control", 
+                  placeholder: "Email" %>
+            </div>
+
+            <div class='form-group'>
+              <%= f.label :password, image_tag("/icons/lock.svg", alt: "password", class: "icon-30") %>
+              <%= f.password_field :password, 
+                  autocomplete: "new-password", 
+                  class: "form-control", 
+                  placeholder: "Password" %>
+            </div>
+
+            <div class='form-group'>
+              <%= f.label :password_confirmation, image_tag("/icons/lock.svg", alt: "password", class: "icon-30") %>
+              <%= f.password_field :password_confirmation, 
+                  autocomplete: "new-password", 
+                  class: "form-control", 
+                  placeholder: "Confirm Password" %>
+            </div>
+            
+            <div class='form-actions'>
+              <div class="signup">
+              <%= link_to "Login", new_user_session_path, class: "link-white" %>
+            </div>
+
+              <%= f.submit "Sign Up" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>
